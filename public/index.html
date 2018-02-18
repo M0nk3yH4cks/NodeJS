@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dario Tomasoni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <ul id="messageArea" class="messages"></ul>
+      </div>
+        <div class="dropup" style="margin-left: 80%">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Emoji
+            </button>
+            <div class="dropdown-menu">
+                <input type="button" onclick="setValue(this)" class="btn" value="🙂">
+                <input type="button" onclick="setValue(this)" class="btn" value="🙁">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤣">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤗">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤔">
+                <input type="button" onclick="setValue(this)" class="btn" value="🙄">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤐">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤤">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤑">
+                <input type="button" onclick="setValue(this)" class="btn" value="😤">
+                <input type="button" onclick="setValue(this)" class="btn" value="😬">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤒">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤕">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤢">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤧">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤠">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤥">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤓">
+                <input type="button" onclick="setValue(this)" class="btn" value="👿">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤡">
+                <input type="button" onclick="setValue(this)" class="btn" value="💀">
+                <input type="button" onclick="setValue(this)" class="btn" value="☠">
+                <input type="button" onclick="setValue(this)" class="btn" value="👻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👽">
+                <input type="button" onclick="setValue(this)" class="btn" value="👾">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤖">
+                <input type="button" onclick="setValue(this)" class="btn" value="🍳">
+                <input type="button" onclick="setValue(this)" class="btn" value="💼">
+                <input type="button" onclick="setValue(this)" class="btn" value="🔬">
+                <input type="button" onclick="setValue(this)" class="btn" value="💻">
+                <input type="button" onclick="setValue(this)" class="btn" value="🚀">
+                <input type="button" onclick="setValue(this)" class="btn" value="💩">
+                <input type="button" onclick="setValue(this)" class="btn" value="🙈">
+                <input type="button" onclick="setValue(this)" class="btn" value="🙉">
+                <input type="button" onclick="setValue(this)" class="btn" value="🙊">
+                <input type="button" onclick="setValue(this)" class="btn" value="👶🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👦🏽">
+                <input type="button" onclick="setValue(this)" class="btn" value="👧🏼">
+                <input type="button" onclick="setValue(this)" class="btn" value="👩🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👨🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👨🏽">
+                <input type="button" onclick="setValue(this)" class="btn" value="👩🏼">
+                <input type="button" onclick="setValue(this)" class="btn" value="👴🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👵🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👮🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="🕵🏼">
+                <input type="button" onclick="setValue(this)" class="btn" value="💂">
+                <input type="button" onclick="setValue(this)" class="btn" value="👷🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👲🏻">
+                <input type="button" onclick="setValue(this)" class="btn" value="👳🏽">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤰">
+                <input type="button" onclick="setValue(this)" class="btn" value="👼">
+                <input type="button" onclick="setValue(this)" class="btn" value="🎅">
+                <input type="button" onclick="setValue(this)" class="btn" value="💁">
+                <input type="button" onclick="setValue(this)" class="btn" value="🤦">
+            </div>
+        </div>
+      <input class="inputMessage" id="textInputArea" placeholder="Scrivere qui..."/>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">Inserisci il tuo nickname</h3>
+        <input class="usernameInput" type="text" maxlength="16" />
+      </div>
+    </li>
+  </ul>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+</body>
+</html>
