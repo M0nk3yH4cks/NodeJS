@@ -1,6 +1,5 @@
 // Setup basic express server
 'use strict';
-var emoji = require("node-emoji");
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
